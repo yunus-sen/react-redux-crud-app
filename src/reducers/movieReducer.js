@@ -1,7 +1,18 @@
-export function movieReducer(state=[],action) {
+import {FETCHED_MOVİES} from "../actions/Movies";
+const initialReducer={
+    movies:[],
+    fetching:false,
+    fetched:false,
+    err:""
+}
+
+export function movieReducer(state=initialReducer,action) {
     switch (action.type) {
-        case "action.type":
-             return state;
+        case FETCHED_MOVİES:
+            return{
+                ...state,
+               movies: action.payload
+            }
         default:
             return  state;
     }

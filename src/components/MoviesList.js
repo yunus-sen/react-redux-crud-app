@@ -23,7 +23,7 @@ function MoviesList({movies}) {
 }
 
 MoviesList.propTypes = {
-    movies:PropTypes.array.isRequired
+    movies:PropTypes.object.isRequired
 };
 
 export default MoviesList;
