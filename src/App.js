@@ -3,24 +3,28 @@ import React, {Component} from 'react';
 import {Link,Route} from "react-router-dom";
 import MoviesPage from "./components/pages/MoviesPage";
 import {connect} from "react-redux";
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 class App extends Component {
     render() {
-        return (
 
+        return (
             <div className={"App"}>
               <header className={"App-header"}>
                   <Link to={"movie"}>Movie Page</Link>
               </header>
-              <Route path={"/movie"} strict exact component={MoviesPage}></Route>
+              <Route path={"/movie"} strict exact render={()=>{
+                  return(
+                      <div>
+                          <MoviesPage/>
+                      </div>
+                  )
+              }}></Route>
             </div>
-
         );
     }
 }
 
 
-const mapStateToProp = (state)=>(
+const mapStateToProps = (state)=>(
     state
 )
-export default connect(mapStateToProp)(App);
+export default connect(mapStateToProps)(App);

@@ -18,8 +18,8 @@ const store=createStore(rootReducer,allenhencer)
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <Provider store={store}>
-              <App />
+          <Provider  store={store}>
+              <App  />
           </Provider>
       </BrowserRouter>
   </React.StrictMode>,
