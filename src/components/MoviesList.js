@@ -13,13 +13,17 @@ function MoviesList({movies}) {
     )
     return(
         <div>
+
             {
                 movies.length===0?emptyMessage:moviesList
             }
+
         </div>
     )
 }
 
-MoviesList.propTypes = {};
+MoviesList.propTypes = {
+    movies:PropTypes.array.isRequired
+};
 
 export default MoviesList;
